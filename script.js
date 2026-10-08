@@ -39,6 +39,7 @@
       if (!rel?.tag_name) return;
       enable();
       const el = document.getElementById('version');
+      if (!el) return;
       const date = rel.published_at ? new Date(rel.published_at).toLocaleDateString(undefined, { year: 'numeric', month: 'long', day: 'numeric' }) : '';
       el.textContent = `Latest version ${rel.tag_name.replace(/^v/, '')}${date ? `, released ${date}` : ''}`;
       el.hidden = false;

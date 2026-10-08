@@ -1,25 +1,23 @@
-@font-face { font-family: 'Inter'; src: url('assets/fonts/inter-latin-wght-normal.woff2') format('woff2'); font-weight: 100 900; font-display: swap; }
-@font-face { font-family: 'Newsreader'; src: url('assets/fonts/newsreader-latin-wght-normal.woff2') format('woff2'); font-weight: 200 800; font-display: swap; }
 
 :root {
-  --bg: #f3f4f1; --surface: #ffffff; --band: #ebeee9; --text: #31081f; --muted: #595959; --border: #dcdfd9;
+  --glow: #f1d9dd; --bg: #f6f5f3; --surface: #ffffff; --band: #efeeec; --text: #1c1315; --muted: #6b6b6b; --border: #e3e0dd;
   --accent: #7d1220; --accent-hover: #650e1a; --accent-text: #ffffff; --accent-soft: #f1e3e5;
   --shadow: none;
   color-scheme: light dark;
 }
 @media (prefers-color-scheme: dark) {
   :root {
-    --bg: #1a0a12; --surface: #25111b; --band: #1f0d16; --text: #eeeeec; --muted: #adb5ae; --border: #42222f;
+    --glow: #3a1522; --bg: #170a10; --surface: #25111b; --band: #1f0d16; --text: #eeeeec; --muted: #adb5ae; --border: #42222f;
     --accent: #e27885; --accent-hover: #ea919b; --accent-text: #2a0a10; --accent-soft: #3f202c;
     --shadow: 0 1px 2px rgba(0, 0, 0, .3), 0 12px 32px rgba(0, 0, 0, .35);
   }
 }
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; scroll-padding-top: 72px; }
-body { margin: 0; background: var(--bg); color: var(--text); font: 16px/1.6 'Inter', -apple-system, 'Segoe UI', sans-serif; -webkit-font-smoothing: antialiased; }
+body { margin: 0; background: var(--bg) linear-gradient(180deg, var(--glow) 0, transparent 460px) no-repeat; color: var(--text); font: 16px/1.6 'Helvetica Neue', Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
 img { max-width: 100%; height: auto; display: block; }
 a { color: var(--accent); }
-h1, h2, h3 { font-family: 'Newsreader', Georgia, serif; font-weight: 500; letter-spacing: -0.02em; line-height: 1.1; margin: 0; }
+h1, h2, h3 { font-family: inherit; font-weight: 600; letter-spacing: -0.03em; line-height: 1.08; margin: 0; }
 h1 { font-size: clamp(36px, 5.5vw, 56px); }
 h2 { font-size: 24px; margin-bottom: 20px; }
 h3 { font-size: 18px; }
@@ -34,7 +32,7 @@ code { background: var(--band); padding: 2px 6px; border-radius: 4px; font-size:
 .bar { display: flex; align-items: center; justify-content: space-between; height: 60px; }
 .brand { display: flex; align-items: center; gap: 8px; text-decoration: none; color: var(--text); }
 .brand img { width: 24px; height: auto; }
-.brand-name { font-family: 'Newsreader', Georgia, serif; font-size: 22px; font-weight: 500; }
+.brand-name { font-size: 18px; font-weight: 600; letter-spacing: -0.02em; }
 nav { display: flex; align-items: center; gap: 20px; }
 
 .btn { display: inline-block; background: var(--accent); color: var(--accent-text); text-decoration: none; font-weight: 500; font-size: 15px; padding: 10px 18px; border-radius: 6px; transition: background .15s; }
