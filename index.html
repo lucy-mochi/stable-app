@@ -7,7 +7,7 @@
   <meta name="description" content="Drop in your payer contracts and fee schedules. Stable handles the rest. Runs on your computer." />
   <meta name="theme-color" content="#f3f4f1" />
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
-  <link rel="stylesheet" href="styles.css?v=9" />
+  <link rel="stylesheet" href="styles.css?v=10" />
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
@@ -40,11 +40,20 @@
       </section>
 
       <section class="tile t-gauge">
-        <h3>Stays on your computer</h3>
-        <div class="gauges" aria-hidden="true">
-          <div><span class="cap"><b style="height:100%"></b></span><small>Local</small></div>
-          <div><span class="cap"><b style="height:0%"></b></span><small>Uploaded</small></div>
+        <h3>Try it</h3>
+        <div class="gauges">
+          <div>
+            <output id="out-notice" class="val">Oct 2</output>
+            <span class="cap" role="slider" tabindex="0" id="s-notice" aria-label="Notice period in days" aria-valuemin="30" aria-valuemax="180" aria-valuenow="90" data-min="30" data-max="180" data-step="15" data-val="90"><b></b></span>
+            <small>Notice period<br /><em id="cap-notice">90 days → reminder</em></small>
+          </div>
+          <div>
+            <output id="out-rate" class="val">$92</output>
+            <span class="cap" role="slider" tabindex="0" id="s-rate" aria-label="Percent of Medicare" aria-valuemin="80" aria-valuemax="200" aria-valuenow="100" data-min="80" data-max="200" data-step="5" data-val="100"><b></b></span>
+            <small>% of Medicare<br /><em id="cap-rate">100% for code 99213</em></small>
+          </div>
         </div>
+        <p class="fine">Example numbers. A contract ending Dec 31; Medicare at $92.</p>
       </section>
 
       <section class="tile t-dark">
@@ -73,6 +82,7 @@
   </footer>
 
   <script src="config.js"></script>
-  <script src="script.js?v=9"></script>
+  <script src="script.js?v=10"></script>
+  <script src="demo.js?v=10"></script>
 </body>
 </html>

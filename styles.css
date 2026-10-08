@@ -97,7 +97,7 @@ nav { display: flex; align-items: center; gap: 22px; } nav a { color: var(--mute
 .gauges { display: flex; justify-content: space-around; align-items: flex-end; }
 .gauges div { display: grid; justify-items: center; gap: 10px; } .gauges small { color: var(--muted); font-size: 12px; }
 .cap { width: 54px; height: 190px; border-radius: 999px; background: color-mix(in srgb, var(--accent) 12%, transparent); display: flex; align-items: flex-end; padding: 5px; }
-.cap b { display: block; width: 100%; min-height: 44px; border-radius: 999px; background: #fff; box-shadow: 0 6px 14px rgba(60, 10, 25, .15); }
+.cap b { display: block; width: 100%; min-height: 44px; pointer-events: none; transition: height .12s; border-radius: 999px; background: #fff; box-shadow: 0 6px 14px rgba(60, 10, 25, .15); }
 .t-dark { grid-column: span 2; background: var(--mauve); color: #f6e9ec; display: grid; place-items: center; align-content: center; gap: 12px; text-align: center; min-height: 260px; }
 .t-dark p { margin: 0; font-size: 15px; opacity: .85; }
 .t-steps { grid-column: span 4; display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; padding: 18px; }
@@ -110,3 +110,30 @@ nav { display: flex; align-items: center; gap: 22px; } nav a { color: var(--mute
 .release { border-top-color: color-mix(in srgb, var(--text) 12%, transparent); }
 .faq { border-top: 0; gap: 8px; } .faq details { background: var(--tile); border: 0; border-radius: 20px; padding: 16px 22px; }
 @media (max-width: 800px) { .t-hero, .t-steps { grid-template-columns: 1fr; } .t-shot, .t-gauge, .t-dark, .t-steps { grid-column: 1 / -1; } .scene { height: 200px; } .tile, .tile-page { padding: 24px; } }
+
+/* Interactive sliders */
+.cap { cursor: ns-resize; touch-action: none; user-select: none; } .cap:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
+.gauges { align-items: flex-end; gap: 12px; flex: 1; padding: 16px 0 8px; }
+.gauges > div { gap: 10px; text-align: center; }
+.val { font-family: 'Newsreader', Georgia, serif; font-size: 28px; line-height: 1; }
+.gauges small { line-height: 1.35; } .gauges em { font-style: normal; font-size: 11px; opacity: .8; }
+.t-gauge .fine { margin: 6px 0 0; text-align: center; font-size: 11px; }
+
+/* Softer, more gradient tiles */
+:root { --pink: #f6dfe4; --lilac: #e3d6e6; --sage: #dde6df; --blush: #f9eceb; }
+@media (prefers-color-scheme: dark) { :root { --pink: #4a1f2e; --lilac: #3a2338; --sage: #25332b; --blush: #2f1620; } }
+.tile, .tile-page { background:
+  radial-gradient(90% 80% at 0% 0%, var(--pink), transparent 62%),
+  radial-gradient(80% 90% at 100% 100%, var(--lilac), transparent 64%),
+  var(--blush); }
+.t-hero { background:
+  radial-gradient(70% 90% at 12% 8%, var(--pink), transparent 62%),
+  radial-gradient(60% 80% at 100% 20%, var(--lilac), transparent 66%),
+  radial-gradient(60% 70% at 70% 110%, var(--sage), transparent 68%), var(--blush); }
+.t-gauge { background:
+  radial-gradient(100% 70% at 50% 0%, var(--lilac), transparent 66%),
+  radial-gradient(90% 70% at 50% 110%, var(--pink), transparent 66%), var(--blush); }
+.t-shot { background: radial-gradient(90% 90% at 100% 0%, var(--sage), transparent 60%), radial-gradient(80% 80% at 0% 100%, var(--pink), transparent 62%), var(--blush); }
+.t-steps { background: radial-gradient(90% 100% at 100% 0%, var(--lilac), transparent 62%), radial-gradient(80% 90% at 0% 100%, var(--sage), transparent 64%), var(--blush); }
+.t-dark { background: radial-gradient(90% 90% at 20% 0%, #9a6f7b, transparent 65%), radial-gradient(90% 90% at 100% 100%, #5b3a4a, transparent 60%), var(--mauve); }
+.faq details { background: radial-gradient(120% 140% at 0% 0%, var(--pink), transparent 70%), var(--blush); }
