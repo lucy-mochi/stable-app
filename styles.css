@@ -1,3 +1,4 @@
+@font-face { font-family: 'Newsreader'; src: url('assets/fonts/newsreader-latin-wght-normal.woff2') format('woff2'); font-weight: 200 800; font-display: swap; }
 
 :root {
   --glow: #f1d9dd; --bg: #f6f5f3; --surface: #ffffff; --band: #efeeec; --text: #1c1315; --muted: #6b6b6b; --border: #e3e0dd;
@@ -14,13 +15,13 @@
 }
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; scroll-padding-top: 72px; }
-body { margin: 0; background: var(--bg) linear-gradient(180deg, var(--glow) 0, transparent 460px) no-repeat; color: var(--text); font: 16px/1.6 'Helvetica Neue', Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+body { margin: 0; background: var(--bg); color: var(--text); font: 16px/1.6 'Helvetica Neue', Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
 img { max-width: 100%; height: auto; display: block; }
 a { color: var(--accent); }
-h1, h2, h3 { font-family: inherit; font-weight: 600; letter-spacing: -0.03em; line-height: 1.08; margin: 0; }
+h1, h2, h3 { font-family: 'Newsreader', Georgia, serif; font-weight: 500; letter-spacing: -0.02em; line-height: 1.1; margin: 0; }
 h1 { font-size: clamp(36px, 5.5vw, 56px); }
-h2 { font-size: 24px; margin-bottom: 20px; }
-h3 { font-size: 18px; }
+h2 { font-size: 36px; margin-bottom: 24px; }
+h3 { font-size: 22px; }
 p { margin: 0 0 12px; }
 code { background: var(--band); padding: 2px 6px; border-radius: 4px; font-size: .9em; }
 .wrap { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
@@ -32,7 +33,7 @@ code { background: var(--band); padding: 2px 6px; border-radius: 4px; font-size:
 .bar { display: flex; align-items: center; justify-content: space-between; height: 60px; }
 .brand { display: flex; align-items: center; gap: 8px; text-decoration: none; color: var(--text); }
 .brand img { width: 24px; height: auto; }
-.brand-name { font-size: 18px; font-weight: 600; letter-spacing: -0.02em; }
+.brand-name { font-family: 'Newsreader', Georgia, serif; font-size: 24px; font-weight: 500; letter-spacing: -0.02em; }
 nav { display: flex; align-items: center; gap: 22px; } nav a { color: var(--muted); text-decoration: none; font-size: 14px; } nav a:hover, nav a[aria-current] { color: var(--text); }
 
 .btn { display: inline-block; background: var(--accent); color: var(--accent-text); text-decoration: none; font-weight: 500; font-size: 15px; padding: 10px 18px; border-radius: 6px; transition: background .15s; }
