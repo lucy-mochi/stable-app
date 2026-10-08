@@ -36,11 +36,7 @@
   fetch(`https://api.github.com/repos/${cfg.repo}/releases/latest`, { headers: { accept: 'application/vnd.github+json' } })
     .then((r) => (r.ok ? r.json() : null))
     .then((rel) => {
-      const soon = document.getElementById('soon');
-      if (!rel?.tag_name) {
-        if (soon) soon.hidden = false;
-        return;
-      }
+      if (!rel?.tag_name) return;
       enable();
       const el = document.getElementById('version');
       const date = rel.published_at ? new Date(rel.published_at).toLocaleDateString(undefined, { year: 'numeric', month: 'long', day: 'numeric' }) : '';
