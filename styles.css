@@ -139,3 +139,13 @@ nav { display: flex; align-items: center; gap: 22px; } nav a { color: var(--mute
 .faq details { background: radial-gradient(120% 140% at 0% 0%, var(--pink), transparent 70%), var(--blush); }
 
 .scene { display: none; } .t-hero { grid-template-columns: 1fr; min-height: 300px; }
+
+/* Smooth page changes: the top bar stays put and the content cross-fades */
+@view-transition { navigation: auto; }
+.top { view-transition-name: top; }
+::view-transition-group(root) { animation-duration: .3s; }
+::view-transition-old(root) { animation: .2s ease both fade-out; } ::view-transition-new(root) { animation: .3s ease both fade-in; }
+@keyframes fade-in { from { opacity: 0; transform: translateY(6px); } } @keyframes fade-out { to { opacity: 0; } }
+main { animation: fade-in .35s ease both; }
+.btn, nav a, .tile, .glass-card, .cap b { transition: background .2s, color .2s, opacity .2s; }
+@media (prefers-reduced-motion: reduce) { main { animation: none; } ::view-transition-group(*), ::view-transition-old(*), ::view-transition-new(*) { animation: none; } }
