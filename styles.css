@@ -70,3 +70,43 @@ nav { display: flex; align-items: center; gap: 22px; } nav a { color: var(--mute
 
 .release { border-top: 1px solid var(--border); padding: 18px 0; } .release header { display: flex; align-items: baseline; gap: 12px; margin-bottom: 8px; }
 .release pre { margin: 0; white-space: pre-wrap; font: inherit; color: var(--muted); font-size: 15px; }
+
+/* Soft bento look */
+:root { --tile: #e9e0e2; --tile2: #f3e8ea; --mauve: #7a5560; --glass: rgba(255,255,255,.62); --radius: 28px; }
+@media (prefers-color-scheme: dark) { :root { --tile: #2a141e; --tile2: #331a26; --mauve: #55303c; --glass: rgba(255,255,255,.08); } }
+:root { --bg: #f4f0f0; }
+@media (prefers-color-scheme: dark) { :root { --bg: #170a10; } }
+.top { background: transparent; backdrop-filter: none; }
+.bento { display: grid; grid-template-columns: repeat(6, 1fr); gap: 16px; margin-top: 8px; }
+.tile { border-radius: var(--radius); background: var(--tile); padding: 36px; position: relative; overflow: hidden; }
+.t-hero { grid-column: 1 / -1; display: grid; grid-template-columns: 1.2fr 1fr; align-items: center; min-height: 380px; background: linear-gradient(135deg, var(--tile2), var(--tile)); }
+.t-hero h1 { font-weight: 400; margin: 18px 0 0; } .t-hero .lead { margin: 18px 0 26px; }
+.tag { background: var(--glass); border-color: transparent; }
+.btn { border-radius: 999px; padding: 11px 22px; }
+.scene { position: relative; height: 300px; }
+.orb { position: absolute; border-radius: 50%; box-shadow: 0 24px 40px rgba(60, 10, 25, .18); }
+.o1 { width: 120px; height: 120px; right: 38%; top: 22%; background: radial-gradient(circle at 32% 28%, #e9a3ad, #7d1220 62%, #4a0a13); }
+.o2 { width: 56px; height: 56px; right: 12%; top: 10%; background: radial-gradient(circle at 32% 28%, #fff, #c9d4cc 70%); }
+.o3 { width: 84px; height: 84px; right: 22%; bottom: 14%; background: radial-gradient(circle at 32% 28%, #f6e3e6, #b98893 75%); }
+.slab { position: absolute; right: 8%; bottom: 8%; width: 62%; height: 46px; border-radius: 999px; background: var(--glass); backdrop-filter: blur(8px); box-shadow: 0 16px 30px rgba(60, 10, 25, .10); }
+.t-shot { grid-column: span 4; padding: 14px; min-height: 420px; display: flex; align-items: center; }
+.t-shot img { border-radius: 18px; width: 100%; }
+.glass { position: absolute; left: 28px; bottom: 28px; margin: 0; background: var(--glass); backdrop-filter: blur(12px); border-radius: 999px; padding: 9px 18px; font-size: 14px; }
+.t-gauge { grid-column: span 2; display: flex; flex-direction: column; justify-content: space-between; background: linear-gradient(180deg, var(--tile2), var(--tile)); }
+.t-gauge h3 { font-weight: 400; font-size: 26px; }
+.gauges { display: flex; justify-content: space-around; align-items: flex-end; }
+.gauges div { display: grid; justify-items: center; gap: 10px; } .gauges small { color: var(--muted); font-size: 12px; }
+.cap { width: 54px; height: 190px; border-radius: 999px; background: color-mix(in srgb, var(--accent) 12%, transparent); display: flex; align-items: flex-end; padding: 5px; }
+.cap b { display: block; width: 100%; min-height: 44px; border-radius: 999px; background: #fff; box-shadow: 0 6px 14px rgba(60, 10, 25, .15); }
+.t-dark { grid-column: span 2; background: var(--mauve); color: #f6e9ec; display: grid; place-items: center; align-content: center; gap: 12px; text-align: center; min-height: 260px; }
+.t-dark p { margin: 0; font-size: 15px; opacity: .85; }
+.t-steps { grid-column: span 4; display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; padding: 18px; }
+.glass-card { background: var(--glass); backdrop-filter: blur(10px); border-radius: 20px; padding: 20px; } .glass-card span { font: 12px ui-monospace, Menlo, monospace; color: var(--muted); }
+.glass-card h3 { font-size: 20px; margin: 18px 0 6px; } .glass-card p { color: var(--muted); font-size: 14px; margin: 0; }
+.tile-page { background: var(--tile); border-radius: var(--radius); padding: 40px; margin-top: 8px; }
+.tile-page .card { background: var(--glass); border: 0; border-radius: 20px; }
+.tile-page .btn-quiet { background: var(--glass); border: 0; }
+.dl.mine { box-shadow: 0 0 0 2px var(--accent); }
+.release { border-top-color: color-mix(in srgb, var(--text) 12%, transparent); }
+.faq { border-top: 0; gap: 8px; } .faq details { background: var(--tile); border: 0; border-radius: 20px; padding: 16px 22px; }
+@media (max-width: 800px) { .t-hero, .t-steps { grid-template-columns: 1fr; } .t-shot, .t-gauge, .t-dark, .t-steps { grid-column: 1 / -1; } .scene { height: 200px; } .tile, .tile-page { padding: 24px; } }

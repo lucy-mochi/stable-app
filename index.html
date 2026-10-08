@@ -7,7 +7,7 @@
   <meta name="description" content="Drop in your payer contracts and fee schedules. Stable handles the rest. Runs on your computer." />
   <meta name="theme-color" content="#f3f4f1" />
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
-  <link rel="stylesheet" href="styles.css?v=8" />
+  <link rel="stylesheet" href="styles.css?v=9" />
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
@@ -22,20 +22,44 @@
     </div>
   </header>
 
-  <main id="main">
-    <section class="hero wrap" id="top">
-      <div class="hero-copy">
-        <p class="tag"><i></i>Early access · alpha</p>
-        <h1>Drop in your contracts.<br />We'll handle the rest.</h1>
-        <p class="lead">Contract and fee schedule management for small clinics. Runs on your computer.</p>
-        <div class="cta"><a class="btn" href="download.html" data-os-cta>Download</a></div>
-      </div>
-      <figure class="hero-shot">
-        <img src="assets/screens/add-files.jpg" width="1200" height="760" alt="Stable sorting a dropped contract, amendment and fee schedule under one payer." />
-      </figure>
-    </section>
+  <main id="main" class="wrap">
+    <div class="bento">
+      <section class="tile t-hero" id="top">
+        <div class="t-hero-copy">
+          <p class="tag"><i></i>Early access · alpha</p>
+          <h1>Drop in your contracts.<br />We'll handle the rest.</h1>
+          <p class="lead">Contract and fee schedule management for small clinics.</p>
+          <a class="btn" href="download.html" data-os-cta>Download</a>
+        </div>
+        <div class="scene" aria-hidden="true"><span class="orb o1"></span><span class="orb o2"></span><span class="orb o3"></span><span class="slab"></span></div>
+      </section>
 
-    <section class="wrap section" id="faq">
+      <section class="tile t-shot">
+        <img src="assets/screens/add-files.jpg" width="1200" height="760" alt="Stable sorting a dropped contract, amendment and fee schedule under one payer." />
+        <p class="glass">Drop files. Review. Done.</p>
+      </section>
+
+      <section class="tile t-gauge">
+        <h3>Stays on your computer</h3>
+        <div class="gauges" aria-hidden="true">
+          <div><span class="cap"><b style="height:100%"></b></span><small>Local</small></div>
+          <div><span class="cap"><b style="height:0%"></b></span><small>Uploaded</small></div>
+        </div>
+      </section>
+
+      <section class="tile t-dark">
+        <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="5" y="11" width="14" height="9" rx="2.5"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>
+        <p>Private by design</p>
+      </section>
+
+      <section class="tile t-steps">
+        <article class="glass-card"><span>01</span><h3>Drop in files</h3><p>Contracts, amendments, scans and fee schedules.</p></article>
+        <article class="glass-card"><span>02</span><h3>Check what we found</h3><p>Payers, dates and terms, filled in for you.</p></article>
+        <article class="glass-card"><span>03</span><h3>Look things up</h3><p>Search a clause or compare rates.</p></article>
+      </section>
+    </div>
+
+    <section class="section" id="faq">
       <div class="faq">
         <details><summary>How much does it cost?</summary><p>Free while in early access. Pricing will be announced before anything is charged.</p></details>
         <details><summary>Where is my data?</summary><p>In a folder on your computer, with an automatic daily backup. Nothing is uploaded.</p></details>
@@ -49,6 +73,6 @@
   </footer>
 
   <script src="config.js"></script>
-  <script src="script.js?v=8"></script>
+  <script src="script.js?v=9"></script>
 </body>
 </html>
